@@ -1,12 +1,32 @@
-:root {
-
-    --card-border: rgba(255, 255, 255, 0.1);
-    --shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3), 0 8px 10px -6px rgba(0, 0, 0, 0.3);
-
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-.ImagensRepresentativas {
-    width: 1300px;
-    height: 400px;
-    margin: auto 100px auto;
+html, body {
+    height: 100%;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+header {
+    width: 100%;
+    height: 100%;
+    overflow: hidden; 
+}
+
+.container {
+    width: 100%;
+    height: 100%;
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+}
+
+.ImagemRepresentativa {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center; 
 }
