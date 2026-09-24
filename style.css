@@ -18,6 +18,51 @@ html, body {
     z-index: -1;
 }
 
+.topbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 18px;
+    padding: 14px 18px;
+    z-index: 2;
+}
+
+.icon-wrapper {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    cursor: pointer;
+    filter: drop-shadow(2px 2px 3px rgba(0, 0, 0, 0.8));
+}
+
+.icon-wrapper::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    top: 130%;
+    right: 0;
+    white-space: nowrap;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    font-size: 12px;
+    padding: 4px 8px;
+    border-radius: 4px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.2s ease;
+    text-shadow: none;
+}
+
+.icon-wrapper:hover::after {
+    opacity: 1;
+    visibility: visible;
+}
+
 .container {
     position: relative;
     z-index: 1;
