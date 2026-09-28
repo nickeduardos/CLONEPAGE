@@ -319,22 +319,18 @@ html, body {
 }
 
 
-/* ===== CORREÇÃO: imagem de fundo em celular/tablet (tela em pé) ===== */
-
-/* cor de segurança caso a imagem demore a carregar */
 html {
     background-color: #14100d;
 }
 
-/* Usa a altura real da tela (barra do navegador no celular) e cobre a tela toda */
+
 .ImagemRepresentativa {
     inset: 0;
     height: 100vh;
     height: 100dvh;
 }
 
-/* Tela em pé: mostra a foto INTEIRA (sem cortar) e preenche o resto da página
-   com a mesma foto desfocada, para o fundo continuar completo como no desktop */
+
 @media (max-aspect-ratio: 1/1) {
 
     body::before {
