@@ -65,13 +65,6 @@ html, body {
     text-shadow: none;
 }
 
-@media (max-width: 768px) {
-    .ImagemRepresentativa {
-        width: 100%; /* Reduz a altura da imagem em telas menores */
-        height: 100%;
-    }
-}
-
 .icon-wrapper:hover::after {
     opacity: 1;
     visibility: visible;
@@ -208,3 +201,154 @@ html, body {
     transform: scale(1.1) translatey(-5px);
 }
 
+
+@media (max-width: 1024px), (max-height: 700px) {
+
+    .container {
+        flex-wrap: wrap;
+        align-items: center;
+        align-content: flex-start;
+        height: auto;
+        min-height: 100vh;
+        padding: 80px 16px 32px;
+    }
+
+    .logo {
+        margin-left: 0;
+        flex-shrink: 0;
+    }
+
+    .identificacao {
+        margin-top: 0;
+    }
+
+    .menu {
+        position: static;
+        transform: none;
+        flex-basis: 100%;
+        width: 100%;
+        max-width: 500px;
+        margin-top: 20px;
+    }
+
+    .menu-item:hover {
+        transform: scale(1.03) translateY(-3px);
+    }
+
+    footer {
+        flex-basis: 100%;
+        width: 100%;
+        max-width: 500px;
+        margin-top: 24px;
+    }
+
+    .formulario {
+        position: static;
+        width: 100%;
+        max-width: 500px;
+        padding: 20px;
+        border-radius: 24px;
+    }
+
+    .entradaEmail {
+        display: block;
+        width: 100%;
+        margin-top: 16px;
+        padding: 10px;
+        font-size: 16px; 
+    }
+
+    .botao {
+        display: block;
+        width: 100%;
+        margin-top: 12px;
+        padding: 12px;
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .topbar {
+        padding: 10px 14px;
+        gap: 14px;
+    }
+
+    .container {
+        padding: 70px 12px 24px;
+    }
+
+    .menu-item {
+        padding: 10px 12px;
+        gap: 8px;
+    }
+
+    .menu-nome,
+    .menu-preco {
+        font-size: 1rem;
+    }
+
+    .menu-preco {
+        white-space: nowrap;
+    }
+
+    .textoEmail {
+        font-size: 0.9rem;
+    }
+}
+
+
+@media (hover: none) {
+
+    .menu-item:hover,
+    .botao:hover {
+        transform: scale(1);
+    }
+}
+
+
+@media (min-width: 1025px) and (min-height: 701px) {
+
+    .formulario {
+        top: 50vh;
+        left: auto;
+        right: 30px;
+        transform: translateY(-50%);
+        width: min(500px, calc(100vw - 480px));
+    }
+}
+
+
+/* ===== CORREÇÃO: imagem de fundo em celular/tablet (tela em pé) ===== */
+
+/* cor de segurança caso a imagem demore a carregar */
+html {
+    background-color: #14100d;
+}
+
+/* Usa a altura real da tela (barra do navegador no celular) e cobre a tela toda */
+.ImagemRepresentativa {
+    inset: 0;
+    height: 100vh;
+    height: 100dvh;
+}
+
+/* Tela em pé: mostra a foto INTEIRA (sem cortar) e preenche o resto da página
+   com a mesma foto desfocada, para o fundo continuar completo como no desktop */
+@media (max-aspect-ratio: 1/1) {
+
+    body::before {
+        content: "";
+        position: fixed;
+        inset: 0;
+        z-index: -2;
+        background: url("xis.jpg") center / cover no-repeat;
+        filter: blur(18px) brightness(0.6);
+        transform: scale(1.1);
+    }
+
+    .ImagemRepresentativa {
+        object-fit: contain;
+        object-position: center;
+    }
+}
