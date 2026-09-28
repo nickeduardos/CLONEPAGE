@@ -65,6 +65,13 @@ html, body {
     text-shadow: none;
 }
 
+@media (max-width: 768px) {
+    .ImagemRepresentativa {
+        width: 100%; /* Reduz a altura da imagem em telas menores */
+        height: 100%;
+    }
+}
+
 .icon-wrapper:hover::after {
     opacity: 1;
     visibility: visible;
