@@ -326,25 +326,9 @@ html {
 
 .ImagemRepresentativa {
     inset: 0;
+    width: 100%;
     height: 100vh;
-    height: 100dvh;
-}
-
-
-@media (max-aspect-ratio: 1/1) {
-
-    body::before {
-        content: "";
-        position: fixed;
-        inset: 0;
-        z-index: -2;
-        background: url("xis.jpg") center / cover no-repeat;
-        filter: blur(18px) brightness(0.6);
-        transform: scale(1.1);
-    }
-
-    .ImagemRepresentativa {
-        object-fit: contain;
-        object-position: center;
-    }
+    height: 100lvh;
+    object-fit: cover;
+    object-position: 55% center; 
 }
