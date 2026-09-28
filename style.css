@@ -201,3 +201,119 @@ html, body {
     transform: scale(1.1) translatey(-5px);
 }
 
+
+@media (max-width: 1024px), (max-height: 700px) {
+
+    .container {
+        flex-wrap: wrap;
+        align-items: center;
+        align-content: flex-start;
+        height: auto;
+        min-height: 100vh;
+        padding: 80px 16px 32px;
+    }
+
+    .logo {
+        margin-left: 0;
+        flex-shrink: 0;
+    }
+
+    .identificacao {
+        margin-top: 0;
+    }
+
+    .menu {
+        position: static;
+        transform: none;
+        flex-basis: 100%;
+        width: 100%;
+        max-width: 500px;
+        margin-top: 20px;
+    }
+
+    .menu-item:hover {
+        transform: scale(1.03) translateY(-3px);
+    }
+
+    footer {
+        flex-basis: 100%;
+        width: 100%;
+        max-width: 500px;
+        margin-top: 24px;
+    }
+
+    .formulario {
+        position: static;
+        width: 100%;
+        max-width: 500px;
+        padding: 20px;
+        border-radius: 24px;
+    }
+
+    .entradaEmail {
+        display: block;
+        width: 100%;
+        margin-top: 16px;
+        padding: 10px;
+        font-size: 16px; 
+    }
+
+    .botao {
+        display: block;
+        width: 100%;
+        margin-top: 12px;
+        padding: 12px;
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .topbar {
+        padding: 10px 14px;
+        gap: 14px;
+    }
+
+    .container {
+        padding: 70px 12px 24px;
+    }
+
+    .menu-item {
+        padding: 10px 12px;
+        gap: 8px;
+    }
+
+    .menu-nome,
+    .menu-preco {
+        font-size: 1rem;
+    }
+
+    .menu-preco {
+        white-space: nowrap;
+    }
+
+    .textoEmail {
+        font-size: 0.9rem;
+    }
+}
+
+
+@media (hover: none) {
+
+    .menu-item:hover,
+    .botao:hover {
+        transform: scale(1);
+    }
+}
+
+
+@media (min-width: 1025px) and (min-height: 701px) {
+
+    .formulario {
+        top: 50vh;
+        left: auto;
+        right: 30px;
+        transform: translateY(-50%);
+        width: min(500px, calc(100vw - 480px));
+    }
+}
