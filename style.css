@@ -14,6 +14,13 @@ html, body {
     font-family: Arial, sans-serif;
 }
 
+/* 
+  PONTO IMPORTANTE: Imagem de fundo fixa com um plano B de altura e unidade moderna 
+  - 'inset: 0' substitui top/right/bottom/left.
+  - 'height: 100lvh' lida melhor com barras de celular, tendo '100vh' como plano B.
+  - z-index: -1 posicionado aqui precisa do background no html para não sumir.
+*/
+
 .ImagemRepresentativa {
     position: fixed;
     top: 0;
@@ -47,6 +54,10 @@ html, body {
     cursor: pointer;
     filter: drop-shadow(2px 2px 3px rgba(0, 0, 0, 0.8));
 }
+
+/* 
+  TRUQUE: Tooltip dinâmico usando o conteúdo do atributo HTML 'data-tooltip' via attr()
+*/
 
 .icon-wrapper::after {
     content: attr(data-tooltip);
@@ -98,6 +109,10 @@ html, body {
     margin-top: 0px;
 }
 
+/* 
+  AJUSTE DE LAYOUT: Centralização vertical combinando top: 50vh e transform: translateY(-50%)
+*/
+
 .menu {
     position: absolute;
     top: 50vh;
@@ -144,6 +159,10 @@ html, body {
     font-weight: bold;
 }
 
+/* 
+  BOA PRÁTICA: Garante que o preço nunca quebre a linha no meio (ex: separando o R$ do valor)
+*/
+
 .menu-preco {
     font-size: 1.1rem;
     color: #f1c40f;
@@ -186,6 +205,7 @@ html, body {
     background-color: red;
     color: white;
     padding: 0.5%;
+    /* UNIDADE CAP: 'cap' baseia-se na altura da letra maiúscula da fonte */
     border-width: 0.1cap;
     border-radius: 4px;
     border-style: hidden;
@@ -201,6 +221,7 @@ html, body {
     transform: scale(1.1) translatey(-5px);
 }
 
+/* --- MEDIA QUERIES E RESPONSIVIDADE --- */
 
 @media (max-width: 1024px), (max-height: 700px) {
 
@@ -298,6 +319,7 @@ html, body {
 }
 
 
+/* Desativa animações de hover em dispositivos touch onde não há cursor de mouse */
 @media (hover: none) {
 
     .menu-item:hover,
